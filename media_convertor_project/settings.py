@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-a1ivj@exphdg6t4+vn6lphl9+!7%02cm07hz3uoeu#ovzepr%c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+  'a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co',
+  'media-convertor.nischaydhiman.repl.co'
+]
 
 
 # Application definition
