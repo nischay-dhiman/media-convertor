@@ -21,5 +21,6 @@ from media_convertor import views
 
 urlpatterns = [
     path('', media_convertor.views.home, name='home' ),
+    path('convert', media_convertor.views.convert, name='convert' ),
     # path('admin/', admin.site.urls),
 ]
