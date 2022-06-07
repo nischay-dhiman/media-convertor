@@ -128,3 +128,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://media-convertor.nischaydhiman.repl.co',
+    'https://media-convertor--nischaydhiman.repl.co',
+    'https://a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co'
+]
+
