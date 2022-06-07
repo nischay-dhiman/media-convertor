@@ -21,6 +21,6 @@ import media_convertor.views
 
 urlpatterns = [
     path('', media_convertor.views.home, name='home' ),
-    path('upload_view', media_convertor.views.upload_view, name='upload_view')
+    # path('upload_view', media_convertor.views.upload_view, name='upload_view')
 
 ]

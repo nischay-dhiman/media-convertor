@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
   'a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co',
   'media-convertor.nischaydhiman.repl.co',
-  'media-convertor--nischaydhiman.repl.co'
+  'media-convertor--nischaydhiman.repl.co',
+  '127.0.0.1'
 ]
 
 

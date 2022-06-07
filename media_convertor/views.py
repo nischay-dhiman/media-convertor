@@ -11,9 +11,6 @@ from media_convertor.wav2midi import *
 from media_convertor.models import Document
 
 def home(request):
-    return render(request, 'home.html')
-
-def upload_view(request):
     message = ''
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -44,4 +41,4 @@ def upload_view(request):
 
     # Render list page with the documents and the form
     context = {'documents': documents, 'form': form, 'message': message}
-    return render(request, 'upload_form.html', context)
+    return render(request, 'home.html', context)
