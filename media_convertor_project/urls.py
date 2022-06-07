@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 import media_convertor.views
-from media_convertor import views
+
 
 urlpatterns = [
     path('', media_convertor.views.home, name='home' ),
-    path('convert', media_convertor.views.convert, name='convert' ),
-    # path('admin/', admin.site.urls),
+    path('upload_view', media_convertor.views.upload_view, name='upload_view')
+
 ]

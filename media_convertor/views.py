@@ -1,25 +1,47 @@
+import os
+import mimetypes
+import codecs
+import time
 
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
-
+from media_convertor.forms import DocumentForm
 from media_convertor.wav2midi import *
+from media_convertor.models import Document
 
 def home(request):
     return render(request, 'home.html')
 
+def upload_view(request):
+    message = ''
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            inputFile = Document(mediaFile=request.FILES['mediafile'])
+            inputFile.save()
 
-def convert(request):
+            timestr = time.strftime("%Y%m%d-%H%M%S")
+            output_filename = f"output_{timestr}.mid"
+            output_dir = "media/"
 
-    # Uploads -> temp file -> DB -> file_path -> CONVERSION PROCESS -> output_path
+            input_path = inputFile.mediaFile.path
+            output_path = f"{output_dir}{output_filename}"
+            run(input_path, output_path)
 
-    input_path = "assets/input.wav"
-    output_path = "assets/output.mid"
+            midFile = open(output_path, 'rb')
+            response = HttpResponse(midFile, content_type='audio/mid')
 
-    run(input_path, output_path)
+            response['Content-Disposition'] = "attachment; filename=%s" % output_filename
+            return response
+        else:
+            message = 'Invalid form!'
+    else:
+        form = DocumentForm()
 
-    url = output_path
-    return render(request, 'convert.html')
+        # Load documents for the list page
+    documents = Document.objects.all()
 
-
-
-# OPEN SOURCE CODE
+    # Render list page with the documents and the form
+    context = {'documents': documents, 'form': form, 'message': message}
+    return render(request, 'upload_form.html', context)

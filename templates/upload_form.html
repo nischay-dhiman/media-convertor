@@ -1,0 +1,45 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'media_convertor/style.css' %}">
+
+<div class="container">
+    <div class="row it">
+        <div class="col-sm-offset-1 col-sm-10" id="one" style="padding: 30px">
+            <p>
+            Please upload media only in 'wav' format.
+            </p><br>
+            <div class="row">
+              <div class="col-sm-offset-4 col-sm-4 form-group">
+                <h3 class="text-center">Upload file</h3>
+              </div><!--form-group-->
+            </div><!--row-->
+            <form action="{% url "upload_view" %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ message }}
+                <p>{{ form.non_field_errors }}</p>
+
+                <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+
+                <div id="uploader">
+                    <div class="row uploadDoc">
+                      <div class="col-sm-3" style="width: 30%;float: left;">
+                        <div class="docErr">Please upload valid file</div><!--error-->
+                        <div class="fileUpload btn btn-orange">
+                            {{ form.mediafile.errors }}
+                            {{ form.mediafile }}
+                        </div><!-- btn-orange -->
+                      </div><!-- col-3 -->
+                      <div class="col-sm-8" style="width: 70%;float: right;">
+                        <input type="text" class="form-control" name="" placeholder="Or Copy a url here" style="height: 42px; width: 100%">
+                      </div><!--col-8-->
+                      <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div><!-- col-1 -->
+                    </div><!--row-->
+                </div><!--uploader-->
+                <div class="text-center">
+                    {#<a class="btn btn-next"><i class="fa fa-paper-plane"></i> Submit</a>#}
+                    <p><input type="submit" value="Download " class="btn btn-new" style="margin-left: 11%"/></p>
+                </div>
+            </form>
+        </div><!--one-->
+    </div><!-- row -->
+</div><!-- container -->
