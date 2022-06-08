@@ -5,6 +5,9 @@
     width: 70%;
     margin-left: 15%;
 }
+body{
+background: #a6c1de;
+}
 .it .btn-orange
 {
 	background-color: transparent;
@@ -32,6 +35,7 @@
     position: relative;
     overflow: hidden;
     margin: 10px;
+    font-family: cursive;
 }
 .fileUpload input.upload {
     position: absolute;
@@ -46,12 +50,13 @@
 }
 .it .btn-new, .it .btn-next
 {
-	margin: 30px 0px;
-	border-radius: 0px;
-	background-color: #333;
-	color: #f5f5f5;
-	font-size: 16px;
-	width: 155px;
+    margin: 30px 0px;
+    border-radius: 0px;
+    background-color: #94b6d3;
+    color: #252121;
+    font-size: 16px;
+    width: 155px;
+    font-family: cursive;
 }
 .it .btn-next
 {
@@ -80,6 +85,7 @@ p
   font-size:16px;
   text-align:center;
   margin:30px 0px;
+  font-family: cursive;
 }
 .it #uploader .docErr
 {
