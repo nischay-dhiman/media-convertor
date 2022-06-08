@@ -6,7 +6,7 @@
     margin-left: 15%;
 }
 body{
-background: #a6c1de;
+    background: #212121;
 }
 .it .btn-orange
 {
@@ -35,7 +35,7 @@ background: #a6c1de;
     position: relative;
     overflow: hidden;
     margin: 10px;
-    font-family: cursive;
+    font-family: Ubuntu;
 }
 .fileUpload input.upload {
     position: absolute;
@@ -50,13 +50,14 @@ background: #a6c1de;
 }
 .it .btn-new, .it .btn-next
 {
-    margin: 30px 0px;
+    margin: 50px 0px;
     border-radius: 0px;
-    background-color: #94b6d3;
+    background-color: #a0a0a9;
     color: #252121;
     font-size: 16px;
     width: 155px;
-    font-family: cursive;
+    font-family: Ubuntu;
+    border-radius: 8px;
 }
 .it .btn-next
 {
@@ -85,7 +86,7 @@ p
   font-size:16px;
   text-align:center;
   margin:30px 0px;
-  font-family: cursive;
+  font-family: Ubuntu;
 }
 .it #uploader .docErr
 {
