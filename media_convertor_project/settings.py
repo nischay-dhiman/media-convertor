@@ -29,7 +29,8 @@ ALLOWED_HOSTS = [
   'a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co',
   'media-convertor.nischaydhiman.repl.co',
   'media-convertor--nischaydhiman.repl.co',
-  '127.0.0.1'
+  '127.0.0.1',
+  'ec2-3-109-214-224.ap-south-1.compute.amazonaws.com',
 ]
 
 
@@ -132,6 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'https://media-convertor.nischaydhiman.repl.co',
     'https://media-convertor--nischaydhiman.repl.co',
-    'https://a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co'
+    'https://a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co',
+    'ec2-3-109-214-224.ap-south-1.compute.amazonaws.com'
 ]
 
