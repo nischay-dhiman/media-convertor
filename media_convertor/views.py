@@ -21,7 +21,7 @@ def home(request):
 
             timestr = time.strftime("%Y%m%d-%H%M%S")
             output_filename = f"output_{timestr}.mid"
-            output_dir = "media/"
+            output_dir = "/home/ubuntu/media-convertor/media/"
 
             input_path = inputFile.mediaFile.path
             output_path = f"{output_dir}{output_filename}"
@@ -42,14 +42,14 @@ def home(request):
             timestr = time.strftime("%Y%m%d-%H%M%S")
 
             input_filename = f"input_{timestr}.wav"
-            input_path = f"media/{input_filename}"
+            input_path = f"/home/ubuntu/media-convertor/media/{input_filename}"
 
             file_response = requests.get(url)
             if (url.endswith('.wav') and file_response.status_code == 200):
                 open(input_path, "wb").write(file_response.content)
 
                 output_filename = f"output_{timestr}.mid"
-                output_dir = "media/"
+                output_dir = "/home/ubuntu/media-convertor/media"
 
                 output_path = f"{output_dir}{output_filename}"
                 run(input_path, output_path)
