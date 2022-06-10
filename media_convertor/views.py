@@ -49,7 +49,7 @@ def home(request):
                 open(input_path, "wb").write(file_response.content)
 
                 output_filename = f"output_{timestr}.mid"
-                output_dir = "/home/ubuntu/media-convertor/media"
+                output_dir = "/home/ubuntu/media-convertor/media/"
 
                 output_path = f"{output_dir}{output_filename}"
                 run(input_path, output_path)
