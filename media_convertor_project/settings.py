@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
   'media-convertor--nischaydhiman.repl.co',
   '127.0.0.1',
   'ec2-3-109-214-224.ap-south-1.compute.amazonaws.com',
+  '139.177.198.166',
+  '139-177-198-166.ip.linodeusercontent.com'
 ]
 
 
@@ -138,5 +140,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://media-convertor--nischaydhiman.repl.co',
     'https://a99aaf50-517c-41b6-a68f-1e9de9c86938.id.repl.co',
     'https://ec2-3-109-214-224.ap-south-1.compute.amazonaws.com',
+    'http://139.177.198.166',
+    'http://139-177-198-166.ip.linodeusercontent.com'
 ]
 
