@@ -19,20 +19,14 @@ def home(request):
             inputFile = Document(mediaFile=request.FILES['mediafile'])
             inputFile.save()
 
-            timestr = time.strftime("%Y%m%d-%H%M%S")
-            output_filename = f"output_{timestr}.mid"
-            output_dir = "/media/"
-
             input_path = inputFile.mediaFile.path
-            output_path = f"{output_dir}{output_filename}"
+
             if input_path.endswith('.wav'):
-                run(input_path, output_path)
+                scp_command = "scp " + input_path + "deploy@64.227.162.84:/home/deploy/test_folder"
+                os.system(scp_command)
 
-                midFile = open(output_path, 'rb')
-                response = HttpResponse(midFile, content_type='audio/mid')
-
-                response['Content-Disposition'] = "attachment; filename=%s" % output_filename
-                return response
+                os.system("ssh deploy@64.227.162.84 ./test.sh " + "test_folder")
+                message = "Success"
             else:
                 message = 'Invalid File Format!'
 
@@ -64,7 +58,7 @@ def home(request):
                 # form = DocumentForm()
         else:
             message = 'Invalid form!'
-            # form = DocumentForm()
+
     else:
         form = DocumentForm()
 
